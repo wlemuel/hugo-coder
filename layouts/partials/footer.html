@@ -1,7 +1,8 @@
 {{ if not .Site.Params.hideFooter | default false }}
   <footer class="footer">
     <section class="container">
-      {{ with .Site.Params.footerContent | safeHTML }}
+      <hr style="border:1px dashed #cccccc" />
+      {{ with .Site.Params.footercontent | safeHTML }}
         <p>{{ . }}</p>
       {{ end }}
       {{ if not .Site.Params.hideCopyright }}
