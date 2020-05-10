@@ -88,12 +88,14 @@
 
     {{ hugo.Generator }}
 
-    {{ if and .Site.Params.baiduAnalytics .Site.Params.baiduAnalytics.siteID }}
-      {{- partial "analytics/baidu" . -}}
-    {{ end }}
+    {{ if not .Site.IsServer }}
+      {{ if and .Site.Params.baiduAnalytics .Site.Params.baiduAnalytics.siteID }}
+        {{- partial "analytics/baidu" . -}}
+      {{ end }}
 
-    {{ if and .Site.Params.googleAnalytics .Site.Params.googleAnalytics.siteID }}
-      {{- partial "analytics/google" . -}}
+      {{ if and .Site.Params.googleAnalytics .Site.Params.googleAnalytics.siteID }}
+        {{- partial "analytics/google" . -}}
+      {{ end }}
     {{ end }}
 
   </head>
