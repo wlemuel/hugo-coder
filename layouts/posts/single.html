@@ -18,7 +18,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              {{ i18n "reading_time" .ReadingTime }}
+              {{ i18n "reading_time" .ReadingTime }}&nbsp;&nbsp;({{ .WordCount }} words)
             </span>
           </div>
           {{ with .Page.Params.Authors }}{{ partial "taxonomy/authors.html" . }}{{ end }}
